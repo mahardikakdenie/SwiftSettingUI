@@ -13,20 +13,23 @@ struct ContentView: View {
             Form {
 //                section Pict Profile
                 Section() {
-                    HStack {
-                        Image("profile")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                        
-//                        Name And Status
-                        VStack(alignment: .leading) {
-                            Text("Mahardika Kessuma Denie").font(.headline)
-                            Text("Software Engineering").font(.caption)
+                    NavigationLink(destination: About()) {
+                        HStack {
+                            Image("profile")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                            
+    //                        Name And Status
+                            VStack(alignment: .leading) {
+                                Text("Mahardika Kessuma Denie").font(.headline)
+                                Text("Software Engineering").font(.caption)
+                            }
                         }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+
                     }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
                 }
 //                Section General Setting
                 Section(header: Text("Pengaturan Umum")) {
@@ -85,3 +88,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct About: View {
+    var body: some View {
+        Text("Halaman About")
+    }
+}
+
+
